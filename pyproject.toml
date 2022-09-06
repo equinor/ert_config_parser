@@ -1,0 +1,42 @@
+[build-system]
+requires = ["setuptools>=45", "setuptools_scm[toml]>=6.2"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ert_config_parser"
+description="Parser of the ert config file"
+readme = "README.md"
+classifiers=[
+    "Development Status :: 1 - Planning",
+    "License :: OSI Approved :: GNU Lesser General Public License v3 or later (LGPLv3+)",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3.7",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+]
+dependencies = ["numpy"]
+dynamic=["version"]
+
+authors = [
+    {name="Equinor", email=fg_sib-scout@equinor.com },
+]
+
+[project.license]
+text = "LGPL-3.0"
+
+[project.urls]
+"Homepage" = "https://github.com/equinor/ert_config_parser",
+
+[project.optional-dependencies]
+dev = [
+    "pytest",
+    "tox",
+    "pre-commit"
+]
+
+[option.entry_points]
+console_scripts =
+    "ert_config_parser=ert_config_parser.__main__:main",
+
+[tool.setuptools_scm]
